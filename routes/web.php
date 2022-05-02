@@ -15,3 +15,9 @@ use App\Http\Controllers\ListController;
 */
 
 Route::get('/', [ListController::class, 'index']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
