@@ -25,7 +25,11 @@ class DatabaseSeeder extends Seeder
             'crear-exam',
             'editar-exam',
             'borrar-exam',
-
+            //operaciones courses
+            'ver-course',
+            'crear-course',
+            'editar-course',
+            'borrar-course',
         ];
         // \App\Models\User::factory(10)->create();
     }
