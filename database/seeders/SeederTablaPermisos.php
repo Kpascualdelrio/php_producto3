@@ -18,19 +18,26 @@ class SeederTablaPermisos extends Seeder
     {
         //
         $permisos = [
-            //tabla roles
+
+            //operaciones roles
             'ver-rol',
             'crear-rol',
             'editar-rol',
             'borrar-rol',
+            //operaciones exams
+            'ver-exam',
+            'crear-exam',
+            'editar-exam',
+            'borrar-exam',
             //tabla courses
             'ver-courses',
             'crear-courses',
             'editar-courses',
             'borrar-courses',
+
         ];
         foreach($permisos as $permiso){
-            Permission::create(['name' => $permiso]);
+            Permission::create(['name'=>$permiso]);
         }
     }
 }
