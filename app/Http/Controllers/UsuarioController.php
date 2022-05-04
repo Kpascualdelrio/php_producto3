@@ -84,7 +84,7 @@ class UsuarioController extends Controller
         $user=User::find($id);
         $roles=Role::pluck('name','name')->all();
         $userRole=$user->roles->pluck('name','name')->all();
-        
+
         return view('usuarios.editar',compact('user','roles','userRole'));
     }
 
@@ -100,15 +100,15 @@ class UsuarioController extends Controller
         //
         $this->validate($request,[
             'name'=>'required',
-            'email'=>'required|email|unique:users,email',
+            'email'=>'required|email|unique:users,email,'.$id,
             'password'=>'same:confirm-password',
             'roles'=>'required'
         ]);
         $input=$request->all();
         if(!empty($input['password'])){
-            $input=Arr::except($input,array('password'));            
+            $input=Arr::except($input,array('password'));
         }else{
-            $input=Arr::except($input,array('password'));            
+            $input=Arr::except($input,array('password'));
         }
         $user=User::find($id);
         $user->update($input);

@@ -34,13 +34,18 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a class="btn btn-info" href="{{route('usuarios.edit', $usuario->id)}}">Editar</a>
+                                            <a class="btn btn-info" href="{{ route('usuarios.edit', $usuario->id )}}">Editar</a>
+                                            {!! Form::open(['method'=> 'DELETE', 'route'=> ['usuarios.destroy', $usuario->id], 'style'=>'display:inline']) !!}
+                                                {!!Form::submit('Borrar', ['class'=> 'btn btn-danger']) !!}
+                                            {!! Form::close() !!}
                                         </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-
+                            <div class="pagination justify-content-end">
+                               {!! $usuarios->links() !!}
+                            </div>
                         </div>
                     </div>
                 </div>
