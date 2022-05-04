@@ -20,7 +20,7 @@ use App\Http\Controllers\ExamsController;
 |
 */
 
-Route::get('/', [ListController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
