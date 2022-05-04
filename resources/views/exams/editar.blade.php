@@ -24,22 +24,22 @@
                         @endif
 
 
-                    <form action="{{ route('exams.update',$exam->id) }}" method="POST">
+                    <form action="{{ route('exams.update',$exams->id_exam) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                    <label for="name">Título</label>
-                                   <input type="text" name="name" class="form-control" value="{{ $exam->name }}">
+                                   <input type="text" name="name" class="form-control" value="{{ $exams->name }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                     
                                 <div class="form-floating">
                                 <label for="mark">Mark</label>
-                                <textarea class="form-control" name="mark" style="height: 100px">{{ $exam->mark }}</textarea>                                
-                                
+                                <input type="text" name="mark" class="form-control" value="{{ $exams->mark }}">
+                                <!-- <textarea class="form-control" name="mark" style="height: 100px">{{ $exams->mark }}</textarea>-->
                                 </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Guardar</button>                            

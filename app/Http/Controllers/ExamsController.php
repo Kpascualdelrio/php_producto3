@@ -85,13 +85,14 @@ class ExamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Exams $exams)
+    public function update(Request $request, $id)
     {
         //
         request()->validate([
             'name'=>'required',
             'mark'=>'required'
         ]);
+        $exams=Exams::find($id);
         Exams::update($request->all());
         return redirect()->route('exams.index');
     }

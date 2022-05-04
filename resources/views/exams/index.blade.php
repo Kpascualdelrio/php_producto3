@@ -28,15 +28,15 @@
                               <tbody>
                             @foreach ($exams as $exam)
                             <tr>
-                                <td style="display: none;">{{ $exam->id }}</td>                                
+                                <td style="display: none;">{{ $exam->id_exam }}</td>                                
                                 <!-- <td style="display: none;">{{ $exam->id_exam }}</td>                                
                                 <td style="display: none;">{{ $exam->id_exam }}</td>-->
                                 <td>{{ $exam->name }}</td>
                                 <td>{{ $exam->mark }}</td>
                                 <td>
-                                    <form action="{{ route('exams.destroy',$exam->id) }}" method="POST">                                        
+                                    <form action="{{ route('exams.destroy',$exam->id_exam) }}" method="POST">                                        
                                         @can('editar-exam')
-                                        <a class="btn btn-info" href="{{ route('exams.edit',$exam->id) }}">Editar</a>
+                                        <a class="btn btn-info" href="{{ route('exams.edit',$exam->id_exam) }}">Editar</a>
                                         @endcan
 
                                         @csrf
