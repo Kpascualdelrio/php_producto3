@@ -14,19 +14,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $permisos=[
-            //operaciones roles
-            'ver-rol',
-            'crear-rol',
-            'editar-rol',
-            'borrar-rol',
-            //operaciones exams
-            'ver-exam',
-            'crear-exam',
-            'editar-exam',
-            'borrar-exam',
+        // $permisos=[
+        //     //operaciones roles
+        //     'ver-rol',
+        //     'crear-rol',
+        //     'editar-rol',
+        //     'borrar-rol',
+        //     //operaciones exams
+        //     'ver-exam',
+        //     'crear-exam',
+        //     'editar-exam',
+        //     'borrar-exam',
 
-        ];
+        // ];
         // \App\Models\User::factory(10)->create();
     }
 }
