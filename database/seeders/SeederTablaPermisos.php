@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
 //spatie
 use Spatie\Permission\Models\Permission;
 
@@ -35,6 +34,11 @@ class SeederTablaPermisos extends Seeder
             'crear-teachers',
             'editar-teachers',
             'borrar-teachers',
+            //tabla courses
+            'ver-courses',
+            'crear-courses',
+            'editar-courses',
+            'borrar-courses',
 
         ];
         foreach ($permisos as $permiso) {
