@@ -22,16 +22,17 @@
                             </div>
                             @endif
 
-                            {!!Form::open(array('route'=>'students.store', 'method'=>'POST'))!!}
+                            <form action="{{ route('students.store') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
                                         <label for="name">username</label>
-                                        {!!Form::text('username', null, array('class'=>'form-control'))!!}
+                                        <input type="text" name="name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
-                                    <div class="form-group">
+                                    <div class="form-group">  
                                         <label for="name">pass</label>
                                         {!!Form::password('pass', null, array('class'=>'form-control'))!!}
                                     </div>

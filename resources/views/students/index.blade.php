@@ -9,8 +9,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
-                        <div class="card-body">                    
+                        <div class="card-body">
+
+                            @can('crear-student')                    
                             <a class="btn btn-warning" href="{{ route('students.create') }}">Nuevo </a>
+                            @endcan
 
                             <table class="table table-striped mt-2">
                                 <thead style="background-color: #6777ef;">
@@ -25,7 +28,7 @@
                                     <th style="color:#fff;">date_registered</th> 
                                 </thead>
                                 <tbody> 
-                                    @foreach ($students as $student)
+                                @foreach ($students as $student)
                                     <tr>
                                         <td style="display: none;">{{ $student->id}}</td>  
                                         <td>{{ $student->username }}</td>
@@ -35,24 +38,20 @@
                                         <td>{{ $student->surname }}</td>
                                         <td>{{ $student->telephone }}</td>
                                         <td>{{ $student->nif }}</td>
-                                        <td>
-                                            @if(!empty($student->getStudentsName()))
-                                                @foreach ($students->getStudents() as $studentsName)
-                                                <h5><span class ="badge badge-dark">{{ $studentName }}</span></h5>
-                                                @endforeach
-                                            @endif
+                                        <td>                                         
+                                        <form action="{{ route('students.destroy', $student->student) }}" method="POST">
+                                               @can('editar-students')
+                                               <a href="{{ route('students.edit', $student->student) }}" class="btn btn-info">Editar</a>
+                                               @endcan
+                                                @csrf
+                                                @method('DELETE')
+                                                @can('borrar-students')
+                                                <button type="submit" class="btn btn-danger">Borrar</button>
+                                                @endcan
+                                           </form>
                                         </td>
-                                        <td>
-                                            <a class="btn btn-info" href="{{ route('students.edit', $student-<id) }}">Editar</a>                                        
-                                            {!! Form::open(['method'=>'DELETE', 'route'=> ['students.destroy', $student->id], 'style'=>'display:inline']) !!}
-                                                {!!Form::submit('Borrar', ['class'=>'btn btn-danger'])!!}
-                                            {!!Form::close() !!}
-
-                                        </td>
-
-
                                     </tr>
-                                @endforeach    
+                                    @endforeach                                  
                                 </tbody>
                             </table>
                             <div class="pagination justify-content-end">

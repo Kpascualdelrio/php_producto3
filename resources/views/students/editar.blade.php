@@ -22,51 +22,57 @@
                             </div>
                             @endif
 
-                            {!!Form::model($student,('method'=>'PATCH','route=>['students.update',$user->id))!!}
+                            <form action="{{ route('students.update',$students->id_student) }}" method="POST">
+                            @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">username</label>
-                                        {!!Form::text('username', null, array('class'=>'form-control'))!!}
+                                        <label for="username">username</label>
+                                        <input type="text" name="username" class="form-control" value="{{ $students->username }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">pass</label>
-                                        {!!Form::password('pass', null, array('class'=>'form-control'))!!}
+                                        <label for="pass">pass</label>
+                                        <input type="password" name="pass" class="form-control" value="{{ $students->pass }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">email</label>
-                                        {!!Form::text('email', null, array('class'=>'form-control'))!!}
+                                        <label for="email">email</label>
+                                        <input type="text" name="email" class="form-control" value="{{ $students->email }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
                                         <label for="name">name</label>
-                                        {!!Form::text('name', null, array('class'=>'form-control'))!!}
+                                        <input type="text" name="email" class="form-control" value="{{ $students->name }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">surname</label>
-                                        {!!Form::text('surname', null, array('class'=>'form-control'))!!}
+                                        <label for="surname">surname</label>
+                                        <input type="text" name="surname" class="form-control" value="{{ $students->surname }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">telephone</label>
-                                        {!!Form::text('telephone', null, array('class'=>'form-control'))!!}
+                                        <label for="telephone">telephone</label>
+                                        <input type="number" name="telephone" class="form-control" value="{{ $students->telephone }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">nif</label>
-                                        {!!Form::text('nif', null, array('class'=>'form-control'))!!}
+                                        <label for="nif">nif</label>
+                                        <input type="text" name="nif" class="form-control" value="{{ $students->nif }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm12 col-md-12">
+                                <div class="form-group">
+                                        <label for="date_registered">date_registered</label>
+                                        <input type="date" name="date_registered" class="form-control" value="{{ $students->date_registered }}">
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 <div>
                             </div>
