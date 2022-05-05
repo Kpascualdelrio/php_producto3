@@ -11,5 +11,8 @@
     <a class="nav-link" href="/exams">
         <i class=" fas fa-building"></i><span>Exams</span>
     </a>
-    
+    <a class="nav-link" href="/teachers">
+        <i class=" fas fa-building"></i><span>Teachers</span>
+    </a>
+
 </li>

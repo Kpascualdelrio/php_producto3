@@ -7,6 +7,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\ExamsController;
+use App\Http\Controllers\TeachersController;
+use Illuminate\Support\Facades\Auth;
+
 
 
 /*
@@ -28,8 +31,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware'=>['auth']],function(){
-    Route::resource('roles',RolController::class);
-    Route::resource('usuarios',UsuarioController::class);
-    Route::resource('exams',ExamsController::class);
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('roles', RolController::class);
+    Route::resource('usuarios', UsuarioController::class);
+    Route::resource('exams', ExamsController::class);
+    Route::resource('teachers', TeachersController::class);
 });

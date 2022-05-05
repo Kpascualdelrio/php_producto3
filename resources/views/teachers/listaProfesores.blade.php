@@ -17,20 +17,20 @@
                 </tr>
             </thead>
             <tbody class="table-success">
-                @foreach ($teachers as $teacher)
+                @foreach ($teachers as $teachers)
                     <tr>
                         <td>
-                            {{ $teacher->id_teacher }}</td>
+                            {{ $teachers->id_teacher }}</td>
                         <td>
-                            {{ $teacher->name }}</td>
+                            {{ $teachers->name }}</td>
                         <td>
-                            {{ $teacher->surname }}</td>
+                            {{ $teachers->surname }}</td>
                         <td>
-                            {{ $teacher->telephone }}</td>
+                            {{ $teachers->telephone }}</td>
                         <td>
-                            {{ $teacher->nif }}</td>
+                            {{ $teachers->nif }}</td>
                         <td>
-                            {{ $teacher->email }}</td>
+                            {{ $teachers->email }}</td>
                     </tr>
                     @endforeach
 

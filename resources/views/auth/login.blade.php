@@ -61,7 +61,12 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                         Login
                     </button>
+
+
                 </div>
+            </form>
+            <form action="/register" >
+                <input type="submit" tabindex="4">Registrarse
             </form>
         </div>
     </div>

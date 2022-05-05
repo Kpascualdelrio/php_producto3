@@ -30,10 +30,15 @@ class SeederTablaPermisos extends Seeder
             'crear-exam',
             'editar-exam',
             'borrar-exam',
+            //operaciones teachers
+            'ver-teachers',
+            'crear-teachers',
+            'editar-teachers',
+            'borrar-teachers',
 
         ];
-        foreach($permisos as $permiso){
-            Permission::create(['name'=>$permiso]);
+        foreach ($permisos as $permiso) {
+            Permission::create(['name' => $permiso]);
         }
     }
 }
