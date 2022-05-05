@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Editar Usuario</h3>
+            <h3 class="page__heading">Editar Courses</h3>
         </div>
         <div class="section-body">
             <div class="row">
@@ -23,43 +23,47 @@
                             </div>
                         @endif
 
-                        {!! Form::model($user, ['method' => 'PATCH','route' => ['usuarios.update', $user->id]]) !!}
+
+                    <form action="{{ route('courses.update',$courses->id_course) }}" method="POST">
+                        @csrf
+                        @method('PUT')
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <label for="name">Nombre</label>
-                                    {!! Form::text('name', null, array('class' => 'form-control')) !!}
+                                   <label for="name">Name</label>
+                                   <input type="text" name="name" class="form-control" value="{{ $courses->name }}">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                                <div class="form-floating">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" name="description" style="height: 100px">{{ $courses->description }}</textarea>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="date_start">Date_Start</label>
+                                   <input type="date" name="date_start" class="form-control" value="{{ $courses->date_start }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <label for="email">E-mail</label>
-                                    {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                                   <label for="date_end">End</label>
+                                   <input type="date" name="date_end" class="form-control" value="{{ $courses->end }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    {!! Form::password('password', array('class' => 'form-control')) !!}
+                                   <label for="active">Active</label>
+                                   <input type="number" name="active" class="form-control" value="{{ $courses->active }}">
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="confirm-password">Confirmar Password</label>
-                                    {!! Form::password('confirm-password', array('class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="">Roles</label>
-                                    {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
-                        {!! Form::close() !!}
+                    </form>
+
                         </div>
                     </div>
                 </div>

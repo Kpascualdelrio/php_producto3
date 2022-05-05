@@ -12,6 +12,7 @@ class Courses extends Model
     protected $primaryKey = 'id_course';
 
     protected $fillable = [
-        'name', 'description', 'date_start', 'date_end', 'activate'
+        'id_course','name', 'description', 'date_start', 'date_end', 'active'
     ];
+    public $timestamps = false;
 }
