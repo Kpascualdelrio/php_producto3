@@ -1,18 +1,20 @@
 <li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
     <a class="nav-link" href="/home">
-        <i class=" fas fa-building"></i><span>Dashboard</span>
+        <i class=" fas fa-building"></i><span style="padding: 10px">Dashboard</span>
     </a>
     <a class="nav-link" href="/usuarios">
-        <i class=" fas fa-user"></i><span>Usuarios</span>
+        <i class=" fas fa-user"></i><span style="padding: 10px">Usuarios</span>
     </a>
     <a class="nav-link" href="/roles">
-        <i class=" fas fa-building"></i><span>Roles</span>
+        <i class=" fa-solid fa-address-book"></i><span style="padding: 10px">Roles</span>
+        <!-- <i class="fa-solid fa-address-book"><span> Roles</span></i> -->
     </a>
     <a class="nav-link" href="/exams">
-        <i class=" fas-solid fa-file-lines"></i><span>Exams</span>
+        <i class="fa-solid fa-file-lines"></i><span style="padding: 10px">Exams</span>
+        <!-- <i class="fa-solid fa-file-lines">Exams</i> -->
     </a>
     <a class="nav-link" href="/courses">
-        <i class=" fas fa-building"></i><span>Courses</span>
+        <i class="fa-solid fa-building-columns"></i><span style="padding: 10px">Courses</span>
     </a>
 
 </li>
