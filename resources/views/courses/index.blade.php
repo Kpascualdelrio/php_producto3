@@ -22,6 +22,7 @@
                                     <th style="color: #fff;">Description</th>
                                     <th style="color: #fff;">Date_start</th>
                                     <th style="color: #fff;">Date_end</th>
+                                    <th style="color: #fff;">Active</th>
                                 </thead>
                                 <tbody>
                                     @foreach($courses as $course)
@@ -31,6 +32,7 @@
                                         <td>{{$course->description}}</td>
                                         <td>{{$course->date_start}}</td>
                                         <td>{{$course->date_end}}</td>
+                                        <td>{{$course->active}}</td>
                                         <td>
                                            <form action="{{ route('courses.destroy', $course->id_course) }}" method="POST">
                                                @can('editar-courses')

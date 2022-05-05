@@ -40,7 +40,25 @@
                                 <label for="description">Description</label>
                                 <textarea class="form-control" name="description" style="height: 100px">{{ $course->description }}</textarea>
 
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="date_start">Date_Start</label>
+                                   <input type="date" name="date_start" class="form-control" value="{{ $course->date_start }}">
                                 </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="date_end">End</label>
+                                   <input type="date" name="date_end" class="form-control" value="{{ $course->end }}">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="active">Active</label>
+                                   <input type="number" name="active" class="form-control" value="{{ $course->active }}">
+                                </div>
+                            </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
