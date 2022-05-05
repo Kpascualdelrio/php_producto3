@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Exams;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class ExamsController extends Controller
 {
@@ -35,7 +37,9 @@ class ExamsController extends Controller
     public function create()
     {
         //
-        return view('exams.crear');
+        $roles=Role::pluck('name','name')->all();
+        return view('exams.crear',compact('roles'));
+        // return view('exams.crear');
     }
 
     /**
@@ -72,8 +76,10 @@ class ExamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Exams $exams )
+    public function edit($id)
     {
+        $exams=Exams::find($id);
+        $roles=Role::pluck('name','name')->all();
         //
         return view('exams.editar',compact('exams'));
     }
@@ -92,9 +98,18 @@ class ExamsController extends Controller
             'name'=>'required',
             'mark'=>'required'
         ]);
+        $input = $request->all();
+
         $exams=Exams::find($id);
-        Exams::update($request->all());
+        $exams->update($input);
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
+
+        $exams->update($request->all());
         return redirect()->route('exams.index');
+
+        // $exams=Exams::find($id);
+        // Exams::update($request->all());
+        // return redirect()->route('exams.index');
     }
 
     /**
@@ -103,10 +118,10 @@ class ExamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Exams $exams)
+    public function destroy()
     {
         //
-        $exams->delete();
+        Exams::find()->delete();
         return redirect()->route('exams.index');
     }
 }
