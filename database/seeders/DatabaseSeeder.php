@@ -26,7 +26,16 @@ class DatabaseSeeder extends Seeder
             'editar-exam',
             'borrar-exam',
 
+            //operaciones students
+            'ver-students',
+            'crear-students',
+            'editar-students',
+            'borrar-students',
+
         ];
         // \App\Models\User::factory(10)->create();
+        foreach($permisos as $permiso){
+            Permission::create(['name' => $permiso]);
+        }
     }
 }
