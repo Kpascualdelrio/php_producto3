@@ -15,7 +15,7 @@ class ExamsController extends Controller
         $this->middleware('permission:crear-exam',['only'=>['create','store']]);
         $this->middleware('permission:editar-exam',['only'=>['edit','update']]);
         $this->middleware('permission:borrar-exam',['only'=>['destroy']]);
-        
+
     }
     /**
      * Display a listing of the resource.
@@ -118,10 +118,10 @@ class ExamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
         //
-        Exams::find()->delete();
+        Exams::find($id)->delete();
         return redirect()->route('exams.index');
     }
 }
