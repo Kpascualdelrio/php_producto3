@@ -24,39 +24,39 @@
                         @endif
 
 
-                    <form action="{{ route('courses.update',$course->id_course) }}" method="POST">
+                    <form action="{{ route('courses.update',$courses->id_course) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                    <label for="name">Name</label>
-                                   <input type="text" name="name" class="form-control" value="{{ $course->name }}">
+                                   <input type="text" name="name" class="form-control" value="{{ $courses->name }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
 
                                 <div class="form-floating">
                                 <label for="description">Description</label>
-                                <textarea class="form-control" name="description" style="height: 100px">{{ $course->description }}</textarea>
+                                <textarea class="form-control" name="description" style="height: 100px">{{ $courses->description }}</textarea>
 
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                    <label for="date_start">Date_Start</label>
-                                   <input type="date" name="date_start" class="form-control" value="{{ $course->date_start }}">
+                                   <input type="date" name="date_start" class="form-control" value="{{ $courses->date_start }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                    <label for="date_end">End</label>
-                                   <input type="date" name="date_end" class="form-control" value="{{ $course->end }}">
+                                   <input type="date" name="date_end" class="form-control" value="{{ $courses->end }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                    <label for="active">Active</label>
-                                   <input type="number" name="active" class="form-control" value="{{ $course->active }}">
+                                   <input type="number" name="active" class="form-control" value="{{ $courses->active }}">
                                 </div>
                             </div>
                             <br>

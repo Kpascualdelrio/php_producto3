@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 //AGREGAMOS
 use App\Models\Courses;
-// use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Role;
 // use Spatie\Permission\Models\Permission;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 // use Symfony\Component\Console\Input\Input;
 
 class CoursesController extends Controller
@@ -39,8 +39,10 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        //
-        return view('courses.crear');
+        //return view('courses.crear');
+        $roles=Role::pluck('name','name')->all();
+        return view('courses.crear',compact('roles'));
+
     }
 
     /**
@@ -78,9 +80,13 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Courses $courses)
+    public function edit($id)
     {
         //
+        $courses=Courses::find($id);
+        $roles=Role::pluck('name','name')->all();
+        // $courseRole=$course->roles->pluck('name','name')->all();
+
         return view('courses.editar', compact('courses'));
     }
 
@@ -91,14 +97,27 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Courses $courses)
+    public function update(Request $request, $id)
     {
         //
         request()->validate([
             'name'=> 'required',
             'description'=> 'required'
         ]);
-        $courses->update($request->all());
+
+        $input = $request->all();
+        // if (!empty($input['name'])){
+        //     $input['name'] = Hash::make($input['name']);
+        //     // $input=Arr::except($input,array('password'));
+        // }else{
+        //     $input=Arr::except($input,array('name'));
+        // }
+
+        $course=Courses::find($id);
+        $course->update($input);
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
+
+        $course->update($request->all());
         return redirect()->route('courses.index');
     }
 
@@ -108,10 +127,11 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Courses $courses)
+    public function destroy($id)
     {
-        //
-        $courses->delete();
+        // $courses->delete();
+        // return redirect()->route('courses.index');
+        Courses::find($id)->delete();
         return redirect()->route('courses.index');
     }
 }
