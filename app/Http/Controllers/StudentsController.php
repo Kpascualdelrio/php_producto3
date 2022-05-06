@@ -16,7 +16,7 @@ class StudentsController extends Controller
     //creamos constructor
      function __construct()
      {
-         $this->middleware('permission:ver-students |crear-students|editar-students|borrar-students',['only'=>['index']]);
+         $this->middleware('permission:ver-students|crear-students|editar-students|borrar-students',['only'=>['index']]);
          $this->middleware('permission:crear-students',['only'=>['create','store']]);
          $this->middleware('permission:editar-students',['only'=>['edit','update']]);
          $this->middleware('permission:borrar-students',['only'=>['destroy']]);

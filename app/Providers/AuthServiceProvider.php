@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::before(function ($use,$ability) { //creamos usuario superadmin
-            return$user->email =="naila@uoc.edu" ?? null;
+            return$user->email=="admin@gmail.com" ?? null;
         });
 
         

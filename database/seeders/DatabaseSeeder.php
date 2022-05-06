@@ -33,9 +33,9 @@ class DatabaseSeeder extends Seeder
             'borrar-students',
 
         ];
-        // \App\Models\User::factory(10)->create();
-        foreach($permisos as $permiso){
-            Permission::create(['name' => $permiso]);
-        }
+        \App\Models\User::factory(10)->create();
+       // foreach($permisos as $permiso){
+           // Permission::create(['name' => $permiso]);
+       // }
     }
 }
