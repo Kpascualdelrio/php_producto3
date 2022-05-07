@@ -66,7 +66,7 @@
                 </div>
             </form>
             <form action="/register" >
-                <input type="submit" tabindex="4">Registrarse
+                <input class="btn btn-primary" type="submit" value="Registrarse" tabindex="4">
             </form>
         </div>
     </div>
