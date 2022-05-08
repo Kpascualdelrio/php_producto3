@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Students extends Model
 {
+    
     use HasFactory;
     protected $table = 'students';
     protected $primaryKey = 'id';
@@ -14,4 +16,7 @@ class Students extends Model
     protected $fillable = [
         'username', 'pass', 'email', 'name', 'surname', 'telephone', 'nif', 'date_registered'
     ];
+    //ESTO NO SE SI VA AQUÍ O DENTRO ARRIBA O NADA
+    public $timestamps = false;
+    
 }
