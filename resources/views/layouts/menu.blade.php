@@ -18,5 +18,8 @@
     <a class="nav-link" href="/courses">
         <i class="fa-solid fa-building-columns"></i><span style="padding: 10px">Courses</span>
     </a>
+    <a class="nav-link" href="/notifications">
+        <i class="fa-solid fa-building-columns"></i><span style="padding: 10px">Notifications</span>
+    </a>
 
 </li>
