@@ -21,6 +21,8 @@ return new class extends Migration
             $table->date('date_end');
             $table->integer('active');
         });
+
+        
     }
 
     /**

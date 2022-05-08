@@ -33,12 +33,24 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                                    
+                                <div class="form-group">
+                                   <label for="id_class">Id_Class</label>
+                                   <input type="text" name="id_class" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                   <label for="id_student">Id_Student</label>
+                                   <input type="text" name="id_student" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                                   
                                 <div class="form-group">
                                    <label for="mark">Mark</label>
                                    <input type="text" name="mark" class="form-control">
                                 </div>
-                            
+                            </div>
                             <button type="submit" class="btn btn-primary">Guardar</button>                            
                         </div>
                     </form>

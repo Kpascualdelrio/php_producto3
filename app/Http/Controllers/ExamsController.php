@@ -50,10 +50,12 @@ class ExamsController extends Controller
     public function store(Request $request)
     {
         //
-        request()->validate([
-            'name' => 'required',
-            'mark' => 'required'
-        ]);
+        // request()->validate([
+        //     'name' => 'required',
+            
+        //     'mark' => 'required'
+
+        // ]);
         Exams::create($request->all());
         return redirect()->route('exams.index');
     }
@@ -93,10 +95,10 @@ class ExamsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        request()->validate([
-            'name' => 'required',
-            'mark' => 'required'
-        ]);
+        // request()->validate([
+        //     'name' => 'required',
+        //     'mark' => 'required'
+        // ]);
         $input = $request->all();
 
         $exams = Exams::find($id);
