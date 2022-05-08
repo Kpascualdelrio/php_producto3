@@ -14,7 +14,7 @@ class RolController extends Controller
     // creamos constructor
     function __construct()
     {
-        $this->middleware('permission:ver-rol |crear-rol|editar-rol|borrar-rol', ['only' => ['index']]);
+        $this->middleware('permission:ver-rol|crear-rol|editar-rol|borrar-rol', ['only' => ['index']]);
         $this->middleware('permission:crear-rol', ['only' => ['create', 'store']]);
         $this->middleware('permission:editar-rol', ['only' => ['edit', 'update']]);
         $this->middleware('permission:borrar-rol', ['only' => ['destroy']]);
@@ -77,7 +77,8 @@ class RolController extends Controller
      */
     public function edit($id)
     {
-        Role::find($id);
+
+        $role=Role::find($id);
         $permission = Permission::get();
         $rolePermissions = DB::table('role_has_permissions')->where('role_has_permissions.role_id', $id)
             ->pluck('role_has_permissions.permission_id', 'role_has_permissions.permission_id')
