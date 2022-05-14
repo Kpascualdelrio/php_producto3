@@ -25,7 +25,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = Students::paginate(20);
+        $students = Students::paginate(10);
         return view('students.index', compact('students'));
     }
 
@@ -56,7 +56,7 @@ class StudentsController extends Controller
             'surname' => 'required',
             'telephone' => 'required',
             'telephone' => 'required',
-            'date_registered' => 'required',
+            'date_registered' => 'required' //NO SE SI DEBERÍA IR CON COMA!!!!!!!!
         ]);
         Students::create($request->all());
         return redirect()->route('students.index');
@@ -105,7 +105,7 @@ class StudentsController extends Controller
             'surname' => 'required',
             'telephone' => 'required',
             'nif' => 'required',
-            'date_registered' => 'required',
+            'date_registered' => 'required' //NO SE SI DEBERÍA IR CON COMA!!!!!!!!
         ]);
         $input = $request->all();
 
