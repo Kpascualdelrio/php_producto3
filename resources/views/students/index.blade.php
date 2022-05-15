@@ -20,30 +20,34 @@
                                   <th style="color:#fff;">name</th>
                                   <th style="color:#fff;">surname</th>
                                   <th style="color:#fff;">telephone</th>
-                                  <th style="color:#fff;">telephone</th>
+                                  <th style="color:#fff;">nif</th>
                                   <th style="color:#fff;">date_registered</th>
                               </thead>
                               <tbody>
                                 @foreach ($students as $student)
                                   <tr>
                                     <td style="display: none;">{{ $student->id }}</td>
-                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->id }}</td>
+                                    <td>{{ $student->username }}</td>
                                     <td>{{ $student->email }}</td>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->surname }}</td>
+                                    <td>{{ $student->telephone }}</td>
+                                    <td>{{ $student->nif }}</td>
+                                    <td>{{ $student->date_registered }}</td>                                                                      
                                     <td>
-                                      @if(!empty($student->getRoleNames()))
-                                        @foreach($student->getRoleNames() as $rolNombre)
-                                          <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
-                                        @endforeach
-                                      @endif
-                                    </td>
-
-                                    <td>
-                                      <a class="btn btn-info" href="{{ route('students.edit',$student->id) }}">Editar</a>
-
-                                      {!! Form::open(['method' => 'DELETE','route' => ['student.destroy', $student->id],'style'=>'display:inline']) !!}
-                                          {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                                      {!! Form::close() !!}
-                                    </td>
+                                    <form action="{{ route('students.destroy', $student->id) }}" method="POST">
+                                                    @can('editar-students')
+                                                        <a class="btn btn-info"
+                                                            href="{{ route('students.edit', $student->id) }}">Editar</a>
+                                                    @endcan
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    @can('borrar-students')
+                                                        <button type="submit" class="btn btn-danger">Borrar</button>
+                                                    @endcan
+                                    </form>                                                     
+                                    </td>                                   
                                   </tr>
                                 @endforeach
                               </tbody>

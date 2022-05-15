@@ -37,7 +37,7 @@ class StudentsController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        return view('teachers.crear', compact('roles'));
+        return view('students.crear', compact('roles'));
     }
 
     /**
@@ -55,8 +55,8 @@ class StudentsController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'telephone' => 'required',
-            'telephone' => 'required',
-            'date_registered' => 'required' //NO SE SI DEBERÍA IR CON COMA!!!!!!!!
+            'nif' => 'required',
+            'date_registered' => 'required' 
         ]);
         Students::create($request->all());
         return redirect()->route('students.index');
@@ -105,7 +105,7 @@ class StudentsController extends Controller
             'surname' => 'required',
             'telephone' => 'required',
             'nif' => 'required',
-            'date_registered' => 'required' //NO SE SI DEBERÍA IR CON COMA!!!!!!!!
+            'date_registered' => 'required' 
         ]);
         $input = $request->all();
 
