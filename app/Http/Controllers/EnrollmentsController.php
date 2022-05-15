@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Enrollment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
+
 // use Spatie\Permission\Models\Enrollment;
 
 class EnrollmentsController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:ver-enrollment |crear-enrollments|editar-enrollment|borrar-enrollment', ['only' => ['index']]);
-        $this->middleware('permission:crear-enrollment', ['only' => ['create', 'store']]);
-        $this->middleware('permission:editar-enrollment', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:borrar-enrollment', ['only' => ['destroy']]);
+        $this->middleware('permission:ver-enrollment |crear-enrollments|editar-enrollments|borrar-enrollments', ['only' => ['index']]);
+        $this->middleware('permission:crear-enrollments', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-enrollments', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:borrar-enrollments', ['only' => ['destroy']]);
     }
 
 
@@ -40,7 +42,7 @@ class EnrollmentsController extends Controller
     public function create()
     {
         //
-        $enrollments = Enrollment::pluck('status', 'status')->all();
+        $roles = Role::pluck('name', 'name')->all();
         return view('enrollments.crear', compact('roles'));
     }
 
@@ -79,8 +81,8 @@ class EnrollmentsController extends Controller
     {
         //
         $enrollments = Enrollment::find($id);
-        $enrollments = Enrollment::pluck('status', 'status')->all();
-        //
+        $roles = Role::pluck('name', 'name')->all();
+        // $enrollments = Enrollment::pluck('status', 'status')->all();
         return view('enrollments.editar', compact('enrollments'));
     }
 

@@ -24,22 +24,23 @@
                                     <th style="color:#fff;">status</th>
                                     <th style="color:#fff;">created_at</th>
                                     <th style="color:#fff;">updated_at</th>
+                                    <th style="color:#fff;">updated_at</th>
 
                                 </thead>
                                 <tbody>
                                     @foreach ($enrollments as $enrollment)
                                         <tr>
-                                            <td style="display: none;">{{ $enrollments->id }}</td>
-                                            <td>{{ $enrollments->id_student }}</td>
-                                            <td>{{ $enrollments->id_course }}</td>
-                                            <td>{{ $enrollments->status }}</td>
-                                            <td>{{ $enrollments->created_at }}</td>
-                                            <td>{{ $enrollments->updated_at }}</td>
+                                            <td style="display: none;">{{ $enrollment->id }}</td>
+                                            <td>{{ $enrollment->id_student }}</td>
+                                            <td>{{ $enrollment->id_course }}</td>
+                                            <td>{{ $enrollment->status }}</td>
+                                            <td>{{ $enrollment->created_at }}</td>
+                                            <td>{{ $enrollment->updated_at }}</td>
                                             <td>
-                                                <form action="{{ route('enrollments.destroy', $enrollments->id) }}" method="POST">
+                                                <form action="{{ route('enrollments.destroy', $enrollment->id) }}" method="POST">
                                                     @can('editar-enrollments')
                                                         <a class="btn btn-info"
-                                                            href="{{ route('enrollments.edit', $enrollments->id) }}">Editar</a>
+                                                            href="{{ route('enrollments.edit', $enrollment->id) }}">Editar</a>
                                                     @endcan
                                                     @csrf
                                                     @method('DELETE')
