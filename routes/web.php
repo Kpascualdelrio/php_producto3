@@ -9,6 +9,7 @@ use App\Http\Controllers\RolController;
 use App\Http\Controllers\ExamsController;
 use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\EnrollmentsController;
+use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\CoursesController;
@@ -40,4 +41,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('teachers', TeachersController::class);
     Route::resource('courses', CoursesController::class);
     Route::resource('enrollments', EnrollmentsController::class);
+    Route::resource('students', StudentsController::class);
+    
 });

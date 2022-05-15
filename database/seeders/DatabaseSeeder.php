@@ -30,6 +30,11 @@ class DatabaseSeeder extends Seeder
         //     'crear-course',
         //     'editar-course',
         //     'borrar-course',
+        //     //operaciones students
+        //     'ver-students',
+        //     'crear-students',
+        //     'editar-students',
+        //     'borrar-students',
 
         // ];
         // \App\Models\User::factory(10)->create();
