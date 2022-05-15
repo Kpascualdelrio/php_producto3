@@ -23,6 +23,7 @@
                                     <th style="color: #fff;">Date_start</th>
                                     <th style="color: #fff;">Date_end</th>
                                     <th style="color: #fff;">Active</th>
+                                    <th style="color: #fff;">Acciones</th>
                                 </thead>
                                 <tbody>
                                     @foreach($courses as $course)

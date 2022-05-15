@@ -14,7 +14,7 @@
 
                             <table class="table table-striped mt-2">
                               <thead style="background-color:#6777ef">
-                                  <th style="display: none;">ID</th>
+                                  <th style="color:#fff;">ID</th>
                                   <th style="color:#fff;">username</th>
                                   <th style="color:#fff;">email</th>
                                   <th style="color:#fff;">name</th>
@@ -22,6 +22,7 @@
                                   <th style="color:#fff;">telephone</th>
                                   <th style="color:#fff;">nif</th>
                                   <th style="color:#fff;">date_registered</th>
+                                  <th style="color:#fff;">Acciones</th>
                               </thead>
                               <tbody>
                                 @foreach ($students as $student)

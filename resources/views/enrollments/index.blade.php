@@ -24,7 +24,7 @@
                                     <th style="color:#fff;">status</th>
                                     <th style="color:#fff;">created_at</th>
                                     <th style="color:#fff;">updated_at</th>
-                                    <th style="color:#fff;">updated_at</th>
+                                    <th style="color:#fff;">Acciones</th>
 
                                 </thead>
                                 <tbody>
