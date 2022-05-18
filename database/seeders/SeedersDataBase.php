@@ -39,7 +39,7 @@ class SeedersDataBase extends Seeder
             'id' => 1,
             'name'=> 'SuperAdmin',
             'email' => 'superadmin@gmail.com',
-            // 'rol' => 'SuperAdmin',
+            'role' => 'SuperAdmin',
             'password' => Hash::make('password'),
 
         ]);
@@ -47,6 +47,7 @@ class SeedersDataBase extends Seeder
             'id' => 2,
             'name'=> 'Teacher',
             'email' => 'teacher@gmail.com',
+            'role' => 'Teacher',
             'password' => Hash::make('password'),
 
         ]);
@@ -54,6 +55,7 @@ class SeedersDataBase extends Seeder
             'id' => 3,
             'name'=> 'Student',
             'email' => 'student@gmail.com',
+            'role' => 'Student',
             'password' => Hash::make('password'),
 
         ]);
