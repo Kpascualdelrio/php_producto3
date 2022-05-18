@@ -33,10 +33,29 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <div class="form-floating">
-                                        <label for="contenido">Contenido</label>
+                                    <div class="form-group">
+                                    <label for="contenido">Contenido</label>
                                         <textarea class="form-control" name="description" style="height: 100px"></textarea>
                                     </div>
+                                </div>                                
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form">
+                                        <label for="date_start">Fecha comienzo</label>
+                                        <input class="form-control" type=date name="date_start">
+                                    </div>
+                                    <div class="form">
+                                        <label for="date_end">Fecha fin</label>
+                                        <input class="form-control" type=date name="date_end">
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                    
+                                </div>
+                                <div class="form-group">
+                                        <label for="active">Active</label>
+                                        <input type="text" name="active" class="form-control">
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
 

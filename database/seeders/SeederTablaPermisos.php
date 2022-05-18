@@ -39,11 +39,16 @@ class SeederTablaPermisos extends Seeder
             'crear-courses',
             'editar-courses',
             'borrar-courses',
-            //tabla notifications
-            'ver-notificacions',
-            'crear-notificacions',
-            'editar-notificacions',
-            'borrar-notificacions',
+            //tabla enrollments
+            'ver-enrollments',
+            'crear-enrollments',
+            'editar-enrollments',
+            'borrar-enrollments',
+            // tabla students
+            'ver-students',
+            'crear-students',
+            'editar-students',
+            'borrar-students',
 
         ];
         foreach ($permisos as $permiso) {

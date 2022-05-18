@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration{
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -12,14 +13,15 @@ return new class extends Migration{
      */
     public function up()
     {
-        Schema::create('works', function (Blueprint $table) {
+        Schema::create('enrollments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_class')->references('id')->on('asignaturas');
-            $table->integer('id_student')->references('id')->on('users');
-            $table->string('name',255);
-            $table->float('mark');
+            $table->bigInteger('id_student')->unsigned();
+            $table->bigInteger('id_course')->unsigned();
+            $table->integer('status');
             $table->timestamps();
         });
+
+        
     }
 
     /**
@@ -29,6 +31,6 @@ return new class extends Migration{
      */
     public function down()
     {
-        Schema::dropIfExists('works');
+        Schema::dropIfExists('enrollments');
     }
 };

@@ -12,8 +12,13 @@ return new class extends Migration{
      */
     public function up()
     {
-        Schema::create('percentatges', function (Blueprint $table) {
-            $table->id();
+        Schema::create('teachers', function (Blueprint $table) {
+            $table->bigIncrements('id_teacher');
+            $table->String('name');
+            $table->String('surname');
+            $table->String('telephone');
+            $table->String('nif');
+            $table->String('email');
             $table->timestamps();
         });
     }
@@ -25,6 +30,6 @@ return new class extends Migration{
      */
     public function down()
     {
-        Schema::dropIfExists('percentatges');
+        Schema::dropIfExists('teachers');
     }
 };

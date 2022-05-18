@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('enrollments', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_student')->references('id')->on('users');
-            $table->integer('id_course')->references('id')->on('courses');
-            $table->integer('status');
+        Schema::create('notifications', function (Blueprint $table) {
+
+            $table->bigIncrements('id_notification');
+            $table->bigInteger('id_student')->unsigned();
+            $table->bigInteger('id_work')->unsigned();
+            $table->bigInteger('id_exam')->unsigned();
+            $table->String('continuous_assessment');
+            $table->bigInteger('final_note');
+
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enrollments');
+        Schema::dropIfExists('notifications');
     }
 };

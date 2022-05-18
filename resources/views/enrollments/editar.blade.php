@@ -3,14 +3,14 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Crear exam</h3>
+            <h3 class="page__heading">Editar Enrollment</h3>
         </div>
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
-                        <div class="card-body">     
-                                                                      
+                        <div class="card-body">                            
+                   
                         @if ($errors->any())                                                
                             <div class="alert alert-dark alert-dismissible fade show" role="alert">
                             <strong>¡Revise los campos!</strong>                        
@@ -23,38 +23,35 @@
                             </div>
                         @endif
 
-                    <form action="{{ route('exams.store') }}" method="POST">
+                    <form action="{{ route('enrollments.update',$enrollments->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                   <label for="name">Name</label>
-                                   <input type="text" name="name" class="form-control">
+                                   <label for="name">Status</label>
+                                   <input type="text" name="name" class="form-control" value="{{ $enrollments->name }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                   <label for="id_class">Id_Class</label>
-                                   <input type="text" name="id_class" class="form-control">
+                                   <label for="date_start">Creado</label>
+                                   <input type="date" name="date_start" class="form-control" value="{{ $enrollments->created_at }}">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                   <label for="id_student">Id_Student</label>
-                                   <input type="text" name="id_student" class="form-control">
+                                   <label for="date_end">Modificado</label>
+                                   <input type="date" name="date_end" class="form-control" value="{{ $enrollments->updated_at }}">
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                                   
-                                <div class="form-group">
-                                   <label for="mark">Mark</label>
-                                   <input type="text" name="mark" class="form-control">
-                                </div>
-                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">                                                    
+                                
+                            <br>
                             <button type="submit" class="btn btn-primary">Guardar</button>                            
                         </div>
                     </form>
-                    
+
                         </div>
                     </div>
                 </div>
