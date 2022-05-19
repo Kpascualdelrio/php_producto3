@@ -16,10 +16,10 @@ class TeachersController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:ver-teachers |crear-teachers|editar-teachers|borrar-teachers', ['only' => ['index']]);
-        $this->middleware('permission:crear-teachers', ['only' => ['create', 'store']]);
-        $this->middleware('permission:editar-teachers', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:borrar-teachers', ['only' => ['destroy']]);
+        // $this->middleware('permission:ver-teachers |crear-teachers|editar-teachers|borrar-teachers', ['only' => ['index']]);
+        // $this->middleware('permission:crear-teachers', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:editar-teachers', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:borrar-teachers', ['only' => ['destroy']]);
     }
     /**
      * Display a listing of the resource.

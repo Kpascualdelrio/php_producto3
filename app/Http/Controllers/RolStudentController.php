@@ -6,7 +6,7 @@ use App\Models\Students;
 use App\Models\Courses;
 use App\Models\Exams;
 use App\Models\Percentage;
-use App\Models\Works;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -14,15 +14,16 @@ class RolStudentController extends Controller
 {
     public function index(){
 
-        $class = Classroom::all();
-        $students = Students::all();
-        $courses = Courses::all();
-        $exams = Exams::all();
-        $works = Works::all();
-        $percentage = Percentage::all();
+        // $usuarios = User::all();
 
+        return view('homeStudent');
 
-        return view('index', array('class' => $class, 'students' => $students, 'courses' => $courses, 'exams' => $exams, 'percentage' => $percentage, 'works' => $works));
+    }
+
+    public function show($id){
+
+        $usuarios = User::where('id','=',($id))->first();
+        return view('homeStudent',compact('usuarios'));
     }
 }
 

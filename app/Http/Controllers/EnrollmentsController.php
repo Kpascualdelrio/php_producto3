@@ -13,10 +13,10 @@ class EnrollmentsController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:ver-enrollment |crear-enrollments|editar-enrollments|borrar-enrollments', ['only' => ['index']]);
-        $this->middleware('permission:crear-enrollments', ['only' => ['create', 'store']]);
-        $this->middleware('permission:editar-enrollments', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:borrar-enrollments', ['only' => ['destroy']]);
+        // $this->middleware('permission:ver-enrollment |crear-enrollments|editar-enrollments|borrar-enrollments', ['only' => ['index']]);
+        // $this->middleware('permission:crear-enrollments', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:editar-enrollments', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:borrar-enrollments', ['only' => ['destroy']]);
     }
 
 

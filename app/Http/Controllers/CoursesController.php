@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\DB;
 class CoursesController extends Controller
 {
     function __construct(){
-        $this->middleware('permission:ver-courses crear-courses|editar-courses|borrar-courses')->only=('index');
-        $this->middleware('permission:crear-courses',['only'=>['create','store']]);
-        $this->middleware('permission:editar-courses',['only'=>['edit','update']]);
-        $this->middleware('permission:borrar-courses',['only'=>['destroy']]);
+        // $this->middleware('permission:ver-courses crear-courses|editar-courses|borrar-courses')->only=('index');
+        // $this->middleware('permission:crear-courses',['only'=>['create','store']]);
+        // $this->middleware('permission:editar-courses',['only'=>['edit','update']]);
+        // $this->middleware('permission:borrar-courses',['only'=>['destroy']]);
     }
     /**
      * Display a listing of the resource.
