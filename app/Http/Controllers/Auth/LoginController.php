@@ -28,6 +28,16 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    // ...
+
+public function authenticated($request , $user){
+    if($user->role=='3'){
+        return redirect()->route('student.index');
+    }else{
+        return redirect()->route('home') ;
+    }
+}
+
     /**
      * Create a new controller instance.
      *
@@ -36,5 +46,9 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        
     }
+
+    
+
 }
