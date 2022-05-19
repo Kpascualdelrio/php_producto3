@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        
         // $permisos=[
         //     //operaciones roles
         //     'ver-rol',
