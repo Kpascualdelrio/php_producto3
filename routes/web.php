@@ -27,13 +27,14 @@ use App\Http\Controllers\CoursesController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->middleware('admin.auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')
+->middleware('admin.auth');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RolController::class);
