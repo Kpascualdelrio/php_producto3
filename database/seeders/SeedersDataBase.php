@@ -24,13 +24,13 @@ class SeedersDataBase extends Seeder
             'name' => 'SuperAdmin',
             'guard_name' => 'web'
         ]);
+        // DB::table('roles')->insert([
+        //     'id' => 2,
+        //     'name' => 'Teacher',
+        //     'guard_name' => 'web'
+        // ]);
         DB::table('roles')->insert([
             'id' => 2,
-            'name' => 'Teacher',
-            'guard_name' => 'web'
-        ]);
-        DB::table('roles')->insert([
-            'id' => 3,
             'name' => 'Student',
             'guard_name' => 'web'
         ]);
@@ -43,16 +43,16 @@ class SeedersDataBase extends Seeder
             'password' => Hash::make('password'),
 
         ]);
+        // DB::table('users')->insert([
+        //     'id' => 2,
+        //     'name'=> 'Teacher',
+        //     'email' => 'teacher@gmail.com',
+        //     'role' => 'Teacher',
+        //     'password' => Hash::make('password'),
+
+        // ]);
         DB::table('users')->insert([
             'id' => 2,
-            'name'=> 'Teacher',
-            'email' => 'teacher@gmail.com',
-            'role' => 'Teacher',
-            'password' => Hash::make('password'),
-
-        ]);
-        DB::table('users')->insert([
-            'id' => 3,
             'name'=> 'Student',
             'email' => 'student@gmail.com',
             'role' => 'Student',

@@ -18,7 +18,7 @@ class AdminAuth
     public function handle(Request $request, Closure $next)
     {
         if (auth()->check()) {
-            if (auth()->user()->role == 1)
+            if (auth()->user()->role == 'SuperAdmin')
                 return $next($request);
         }
         return redirect()->route('student.index');

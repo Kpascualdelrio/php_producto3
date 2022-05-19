@@ -18,7 +18,7 @@ class StudentAuth
     public function handle(Request $request, Closure $next)
     {
         if (auth()->check()) {
-            if (auth()->user()->role == 3)
+            if (auth()->user()->role == 'Student')
                 return $next($request);
         }
         return redirect()->to('/');

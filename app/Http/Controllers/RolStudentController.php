@@ -8,7 +8,7 @@ class RolStudentController extends Controller
 {
     public function index(){
 
-        return 'homeStudent';
+        return view('homestudent');
 
     }
 }

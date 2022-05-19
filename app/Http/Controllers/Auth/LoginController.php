@@ -31,7 +31,7 @@ class LoginController extends Controller
     // ...
 
 public function authenticated($request , $user){
-    if($user->role=='3'){
+    if($user->role=='Student'){
         return redirect()->route('student.index');
     }else{
         return redirect()->route('home') ;
