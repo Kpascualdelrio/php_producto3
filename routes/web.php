@@ -11,6 +11,7 @@ use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\EnrollmentsController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\RolStudentController;
+use App\Http\Controllers\NotificationsController;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\CoursesController;
@@ -46,6 +47,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('students', StudentsController::class);
     Route::resource('class', ClassController::class);
     
+    Route::resource('notifications', NotificationsController::class);
 });
 
 Route::get('/homestudent', [RolStudentController::class, 'index'])
