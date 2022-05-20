@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Classroom;
 use App\Models\Exams;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -37,8 +38,10 @@ class ExamsController extends Controller
     public function create()
     {
         //
-        $roles = Role::pluck('name', 'name')->all();
-        return view('exams.crear', compact('roles'));
+      
+        $class = Classroom::all()->pluck('id_class');
+        $students = User::pluck('id')->all();
+        return view('exams.crear', compact('class','students'));
         // return view('exams.crear');
     }
 

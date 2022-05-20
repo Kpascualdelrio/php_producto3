@@ -13,7 +13,7 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\RolStudentController;
 use App\Http\Controllers\NotificationsController;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\CoursesController;
 
 

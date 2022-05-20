@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 
 //AGREGAMOS
@@ -40,8 +41,9 @@ class CoursesController extends Controller
     public function create()
     {
         //return view('courses.crear');
+        
         $roles=Role::pluck('name','name')->all();
-        return view('courses.crear',compact('roles'));
+        return view('courses.crear');
 
     }
 
