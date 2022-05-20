@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\WorksController;
 
 
 /*
@@ -49,7 +50,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('class', ClassController::class);
     Route::resource('schedule', ScheduleController::class);    
     Route::resource('notifications', NotificationsController::class);
-    Route::resource('works', WorskController::class);
+    Route::resource('works', WorksController::class);
 });
 
 Route::get('/homestudent', [RolStudentController::class, 'index'])

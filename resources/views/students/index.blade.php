@@ -20,7 +20,7 @@
                                   <th style="color:#fff;">Mark</th>
                               </thead>
                               <tbody>
-                                @foreach ($works as $works)
+                                @foreach ($students as $students)
                                   <tr>
                                     <td style="display: none;">{{ $work->id }}</td>
                                     <td>{{ $work->id_student }}</td>

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
-class ExamsController extends Controller
+class WorksController extends Controller
 {
     function __construct()
     {
@@ -25,7 +25,7 @@ class ExamsController extends Controller
     public function index()
     {
         //
-        $works = Works::paginate(5);
+        $works = Works::paginate(20);
         return view('works.index', compact('works'));
     }
 

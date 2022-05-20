@@ -26,6 +26,12 @@
                             <form action="{{ route('works.store') }}" method="POST">
                                 @csrf
                                 <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="id_class">id_class</label>
+                                        <input type="text" name="id_class" class="form-control" >
+                                    </div>
+                                </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <label for="id_student">id_student</label>
