@@ -3,7 +3,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-      <h3 class="page__heading">Students</h3>
+      <h3 class="page__heading">Works</h3>
   </div>
       <div class="section-body">
           <div class="row">
@@ -15,22 +15,32 @@
                             <table class="table table-striped mt-2">
                               <thead style="background-color:#6777ef">
                                   <th style="color:#fff;">ID</th>
-                                  <th style="color:#fff;">ID_Students</th>
-                                  <th style="color:#fff;">Name</th>
-                                  <th style="color:#fff;">Mark</th>
+                                  <th style="color:#fff;">username</th>
+                                  <th style="color:#fff;">email</th>
+                                  <th style="color:#fff;">name</th>
+                                  <th style="color:#fff;">surname</th>
+                                  <th style="color:#fff;">telephone</th>
+                                  <th style="color:#fff;">nif</th>
+                                  <th style="color:#fff;">date_registered</th>
+                                  <th style="color:#fff;">Acciones</th>
                               </thead>
                               <tbody>
-                                @foreach ($works as $works)
+                                @foreach ($students as $student)
                                   <tr>
-                                    <td style="display: none;">{{ $work->id }}</td>
-                                    <td>{{ $work->id_student }}</td>
-                                    <td>{{ $work->name }}</td>
-                                    <td>{{ $work->mark }}</td>
+                                    <td style="display: none;">{{ $student->id }}</td>
+                                    <td>{{ $student->id }}</td>
+                                    <td>{{ $student->username }}</td>
+                                    <td>{{ $student->email }}</td>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->surname }}</td>
+                                    <td>{{ $student->telephone }}</td>
+                                    <td>{{ $student->nif }}</td>
+                                    <td>{{ $student->date_registered }}</td>
                                     <td>
-                                    <form action="{{ route('works.destroy', $work->id) }}" method="POST">
+                                    <form action="{{ route('students.destroy', $student->id) }}" method="POST">
 
                                                         <a class="btn btn-info"
-                                                            href="{{ route('works.edit', $work->id) }}">Editar</a>
+                                                            href="{{ route('students.edit', $student->id) }}">Editar</a>
 
                                                     @csrf
                                                     @method('DELETE')
@@ -45,7 +55,7 @@
                             </table>
                             <!-- Centramos la paginacion a la derecha -->
                           <div class="pagination justify-content-end">
-                            {!! $works->links() !!}
+                            {!! $students->links() !!}
                           </div>
 
                       </div>
