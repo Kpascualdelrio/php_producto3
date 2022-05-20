@@ -35,8 +35,8 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
 
                                         <div class="form-group">
-                                            <label for="pass">pass</label>
-                                            <input type="text" name="pass" class="form-control">
+                                            <label for="pass">password</label>
+                                            <input type="password" name="pass" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">

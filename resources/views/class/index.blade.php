@@ -17,7 +17,7 @@
 
                             <table class="table table-striped mt-2">
                                 <thead style="background-color: #6777ef;">
-                                    <th style="display: none;">ID_Course</th>
+                                    <th style="display: none;">ID_class</th>
                                     <th style="color: #fff;">Name</th>
                                     <th style="color: #fff;">Description</th>
                                     <th style="color: #fff;">Date_start</th>

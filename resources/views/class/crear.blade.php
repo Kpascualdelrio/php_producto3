@@ -23,29 +23,39 @@
                         </div>
                         @endif
 
-                        <form action="{{ route('courses.store') }}" method="POST">
+                        <form action="{{ route('class.store') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control">
+                                        <label for="id_class">id_class</label>
+                                        <input type="text" name="id_class" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                    <label for="contenido">Contenido</label>
-                                        <textarea class="form-control" name="description" style="height: 100px"></textarea>
+                                    <label for="id_teacher">id_teacher</label>
+                                        <textarea class="form-control" name="id_teacher" style="height: 100px"></textarea>
                                     </div>
                                 </div>                                
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form">
-                                        <label for="date_start">Fecha comienzo</label>
-                                        <input class="form-control" type=date name="date_start">
+                                        <label for="id_course">id_course</label>
+                                        <input class="form-control" type=date name="id_course">
                                     </div>
                                     <div class="form">
-                                        <label for="date_end">Fecha fin</label>
-                                        <input class="form-control" type=date name="date_end">
+                                        <label for="id_schedule">id_schedule</label>
+                                        <input class="form-control" type=date name="id_schedule">
+                                    </div>
+
+                                    <div class="form">
+                                        <label for="name">name</label>
+                                        <input class="form-control" type=date name="name">
+                                    </div>
+
+                                    <div class="form">
+                                        <label for="id_schedule">Fecha id_schedule</label>
+                                        <input class="form-control" type=date name="id_schedule">
                                     </div>
 
                                     <div class="col-xs-12 col-sm-12 col-md-12">

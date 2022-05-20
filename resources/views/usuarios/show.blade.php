@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layoutsStudents.app')
 
 @section('content')
 <section class="section">
@@ -21,33 +21,24 @@
                                   <th style="color:#fff;">Acciones</th>
                               </thead>
                               <tbody>
-                                @foreach ($usuarios as $usuario)
+                              
                                   <tr>
-                                    <td style="display: none;">{{ $usuario->id }}</td>
-                                    <td>{{ $usuario->name }}</td>
-                                    <td>{{ $usuario->email }}</td>
+                                    <td style="display: none;">{{ $usuarios->id }}</td>
+                                    <td>{{ $usuarios->name }}</td>
+                                    <td>{{ $usuarios->email }}</td>
                                     <td>
                                    
-                                      <h5><span class="badge badge-dark">{{ $usuario->role}}</span></h5>
+                                      <h5><span class="badge badge-dark">{{ $usuarios->role}}</span></h5>
                                     
 
                                     </td>
 
-                                    <td>
-                                      <a class="btn btn-info" href="{{ route('usuarios.edit',$usuario->id) }}">Editar</a>
-
-                                      {!! Form::open(['method' => 'DELETE','route' => ['usuarios.destroy', $usuario->id],'style'=>'display:inline']) !!}
-                                          {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                                      {!! Form::close() !!}
-                                    </td>
+                                   
                                   </tr>
-                                @endforeach
+                               
                               </tbody>
                             </table>
-                            <!-- Centramos la paginacion a la derecha -->
-                          <div class="pagination justify-content-end">
-                            {!! $usuarios->links() !!}
-                          </div>
+                          
 
                       </div>
                   </div>

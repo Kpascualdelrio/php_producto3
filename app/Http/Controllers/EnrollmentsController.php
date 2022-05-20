@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Exams;
+use App\Models\Enrollment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
-class ExamsController extends Controller
+// use Spatie\Permission\Models\Enrollment;
+
+class EnrollmentsController extends Controller
 {
     function __construct()
     {
-        // $this->middleware('permission:ver-exam |crear-exam|editar-exam|borrar-exam', ['only' => ['index']]);
-        // $this->middleware('permission:crear-exam', ['only' => ['create', 'store']]);
-        // $this->middleware('permission:editar-exam', ['only' => ['edit', 'update']]);
-        // $this->middleware('permission:borrar-exam', ['only' => ['destroy']]);
+        // $this->middleware('permission:ver-enrollment |crear-enrollments|editar-enrollments|borrar-enrollments', ['only' => ['index']]);
+        // $this->middleware('permission:crear-enrollments', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:editar-enrollments', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:borrar-enrollments', ['only' => ['destroy']]);
     }
+
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -25,8 +30,8 @@ class ExamsController extends Controller
     public function index()
     {
         //
-        $exams = Exams::paginate(5);
-        return view('exams.index', compact('exams'));
+        $enrollments = Enrollment::paginate(5);
+        return view('enrollments.index', compact('enrollments'));
     }
 
     /**
@@ -38,8 +43,7 @@ class ExamsController extends Controller
     {
         //
         $roles = Role::pluck('name', 'name')->all();
-        return view('exams.crear', compact('roles'));
-        // return view('exams.crear');
+        return view('enrollments.crear', compact('roles'));
     }
 
     /**
@@ -51,14 +55,9 @@ class ExamsController extends Controller
     public function store(Request $request)
     {
         //
-        // request()->validate([
-        //     'name' => 'required',
 
-        //     'mark' => 'required'
-
-        // ]);
-        Exams::create($request->all());
-        return redirect()->route('exams.index');
+        Enrollment::create($request->all());
+        return redirect()->route('enrollments.index');
     }
 
     /**
@@ -69,12 +68,7 @@ class ExamsController extends Controller
      */
     public function show($id)
     {
-        $exams = [];
-        $exams = User::where('id', '=', $id)
-            ->join('exams', 'exams.id_student', '=', 'users.id')
-            ->get();
-
-        return view('exams.show', compact('exams'));
+        //
     }
 
     /**
@@ -85,10 +79,11 @@ class ExamsController extends Controller
      */
     public function edit($id)
     {
-        $exams = Exams::find($id);
-        $roles = Role::pluck('name', 'name')->all();
         //
-        return view('exams.editar', compact('exams'));
+        $enrollments = Enrollment::find($id);
+        $roles = Role::pluck('name', 'name')->all();
+        // $enrollments = Enrollment::pluck('status', 'status')->all();
+        return view('enrollments.editar', compact('enrollments'));
     }
 
     /**
@@ -101,22 +96,14 @@ class ExamsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        // request()->validate([
-        //     'name' => 'required',
-        //     'mark' => 'required'
-        // ]);
         $input = $request->all();
 
-        $exams = Exams::find($id);
-        $exams->update($input);
+        $enrollments = Enrollment::find($id);
+        $enrollments->update($input);
         DB::table('model_has_roles')->where('model_id', $id)->delete();
 
-        $exams->update($request->all());
-        return redirect()->route('exams.index');
-
-        // $exams=Exams::find($id);
-        // Exams::update($request->all());
-        // return redirect()->route('exams.index');
+        $enrollments->update($request->all());
+        return redirect()->route('enrollments.index');
     }
 
     /**
@@ -128,7 +115,7 @@ class ExamsController extends Controller
     public function destroy($id)
     {
         //
-        Exams::find($id)->delete();
-        return redirect()->route('exams.index');
+        Enrollment::find($id)->delete();
+        return redirect()->route('enrollments.index');
     }
 }

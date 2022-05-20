@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\Permission\Models\Role;
+
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 
-//AGREGAMOS
-use App\Models\Courses;
-use Spatie\Permission\Models\Role;
-// use Spatie\Permission\Models\Permission;
-use Illuminate\Support\Facades\DB;
-// use Symfony\Component\Console\Input\Input;
-
-class CoursesController extends Controller
+class ClassController extends Controller
 {
-    function __construct(){
+    function __construct()
+    {
         // $this->middleware('permission:ver-courses crear-courses|editar-courses|borrar-courses')->only=('index');
         // $this->middleware('permission:crear-courses',['only'=>['create','store']]);
         // $this->middleware('permission:editar-courses',['only'=>['edit','update']]);
@@ -28,8 +25,8 @@ class CoursesController extends Controller
     {
         //
 
-        $courses = Courses::paginate(5);
-        return view('courses.index', compact('courses'));
+        $class = Classroom::paginate(5);
+        return view('class.index', compact('class'));
     }
 
     /**
@@ -40,9 +37,8 @@ class CoursesController extends Controller
     public function create()
     {
         //return view('courses.crear');
-        $roles=Role::pluck('name','name')->all();
-        return view('courses.crear',compact('roles'));
-
+        $roles = Role::pluck('name', 'name')->all();
+        return view('class.crear', compact('roles'));
     }
 
     /**
@@ -55,12 +51,12 @@ class CoursesController extends Controller
     {
         //
         request()->validate([
-            'name'=> 'required',
-            'description'=> 'required'
+            'name' => 'required',
+            'description' => 'required'
         ]);
 
-        Courses::create($request->all());
-        return redirect()->route('courses.index');
+        Classroom::create($request->all());
+        return redirect()->route('class.index');
     }
 
     /**
@@ -83,11 +79,11 @@ class CoursesController extends Controller
     public function edit($id)
     {
         //
-        $courses=Courses::find($id);
-        $roles=Role::pluck('name','name')->all();
+        $class = Classroom::find($id);
+        $roles = Role::pluck('name', 'name')->all();
         // $courseRole=$course->roles->pluck('name','name')->all();
 
-        return view('courses.editar', compact('courses'));
+        return view('class.editar', compact('class'));
     }
 
     /**
@@ -101,8 +97,13 @@ class CoursesController extends Controller
     {
         //
         request()->validate([
-            'name'=> 'required',
-            'description'=> 'required'
+
+
+            'id_class' => 'required',
+            'id_teacher'  => 'required',
+            'id_course' => 'required',
+            'id_schedule'  => 'required',
+
         ]);
 
         $input = $request->all();
@@ -113,12 +114,12 @@ class CoursesController extends Controller
         //     $input=Arr::except($input,array('name'));
         // }
 
-        $course=Courses::find($id);
-        $course->update($input);
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
+        $class = Classroom::find($id);
+        $class->update($input);
+       // DB::table('model_has_roles')->where('model_id', $id)->delete();
 
-        $course->update($request->all());
-        return redirect()->route('courses.index');
+        $class->update($request->all());
+        return redirect()->route('class.index');
     }
 
     /**
@@ -131,7 +132,7 @@ class CoursesController extends Controller
     {
         // $courses->delete();
         // return redirect()->route('courses.index');
-        Courses::find($id)->delete();
-        return redirect()->route('courses.index');
+        Classroom::find($id)->delete();
+        return redirect()->route('class.index');
     }
 }

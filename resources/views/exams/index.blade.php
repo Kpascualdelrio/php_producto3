@@ -12,15 +12,15 @@
                         <div class="card-body">
                 
             
-                        @can('crear-exam')
+                       
                         <a class="btn btn-warning" href="{{ route('exams.create') }}">Nuevo</a>
-                        @endcan
+                      
             
                         <table class="table table-striped mt-2">
                                 <thead style="background-color:#6777ef">                                     
-                                    <th style="display: none;">ID_exam</th>
-                                    <th style="display: none;">ID_class</th>
-                                    <th style="display: none;">ID_studen</th>
+                                    <th style="color:#fff;">ID_exam</th>
+                                    <th style="color:#fff;">ID_class</th>
+                                    <th style="color:#fff;">ID_student</th>
                                     <th style="color:#fff;">name</th>
                                     <th style="color:#fff;">mark</th>                                    
                                     <th style="color:#fff;">Acciones</th>                                                                   
@@ -28,7 +28,9 @@
                               <tbody>
                             @foreach ($exams as $exam)
                             <tr>
-                                <td style="display: none;">{{ $exam->id_exam }}</td>                                
+                                <td >{{ $exam->id_exam }}</td>  
+                                <td>{{ $exam->id_class }}</td>
+                                <td>{{ $exam->id_student }}</td>                              
                                 <!-- <td style="display: none;">{{ $exam->id_exam }}</td>                                
                                 <td style="display: none;">{{ $exam->id_exam }}</td>-->
                                 <td>{{ $exam->name }}</td>
