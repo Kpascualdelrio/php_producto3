@@ -37,4 +37,8 @@
     <a class="nav-link" href="/notifications">
         <i class="fa-solid fa-building-columns"></i><span style="padding: 10px">Notifications</span>
     </a>
+
+    <a class="nav-link" href="/schedule">
+        <i class="fa-solid fa-building-columns"></i><span style="padding: 10px">Schedule</span>
+    </a>
 </li>

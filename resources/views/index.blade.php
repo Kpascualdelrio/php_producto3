@@ -360,6 +360,61 @@
         </div>
     </div>
 
+    {{-- Schedule --}}
+    <div id="accordion6">
+        <div class="card">
+            <div class="card-header" id="cabecera6">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#respuesta6"
+                        aria-controls="respuesta3">
+                        Schedule
+                    </button>
+                </h5>
+            </div>
+            <div id="respuesta6" class="collapse" aria-labelledby="cabecera1" data-parent="#accordion6">
+                <div class="card-body margin-0">
+                    <div class="container">
+                        <h3 style="color: royalblue;">Schedule</h3>
+                        <div class="table-responsive">
+                            <table class="table table-light table-striped table-bordered table-hover text-center">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>id_schedule</th>
+                                        <th>id_class</th>
+                                        <th>time_start</th>
+                                        <th>time_end</th>
+                                        <th>day</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-success">
+                                    @foreach ($schedule as $schedule)
+                                        <tr>
+                                            <td>
+                                                {{ $schedule->id_schedule }}
+                                            </td>
+                                            <td>
+                                                {{ $schedule->id_class }}</td>
+                                            <td>
+                                                {{ $schedule->time_start }}</td>
+                                            <td>
+                                                {{ $schedule->time_end }}</td>
+                                            <td>
+                                                {{ $schedule->day }}</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <td> <a href="" class="btn btn-primary">Agregar schedule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 @include('partials/footer')
