@@ -38,15 +38,15 @@
                                     <td>{{ $student->date_registered }}</td>                                                                      
                                     <td>
                                     <form action="{{ route('students.destroy', $student->id) }}" method="POST">
-                                                    @can('editar-students')
+                                                   
                                                         <a class="btn btn-info"
                                                             href="{{ route('students.edit', $student->id) }}">Editar</a>
-                                                    @endcan
+                                                   
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('borrar-students')
+                                                    
                                                         <button type="submit" class="btn btn-danger">Borrar</button>
-                                                    @endcan
+                                                   
                                     </form>                                                     
                                     </td>                                   
                                   </tr>

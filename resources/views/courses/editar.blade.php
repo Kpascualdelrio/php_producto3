@@ -24,7 +24,7 @@
                         @endif
 
 
-                    <form action="{{ route('courses.update',$courses->id_course) }}" method="POST">
+                    <form action="{{ route('courses.update',$courses->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="row">

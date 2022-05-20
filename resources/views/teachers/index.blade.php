@@ -12,9 +12,9 @@
                         <div class="card-body">
 
 
-                            @can('crear-teachers')
+                            
                                 <a class="btn btn-warning" href="{{ route('teachers.create') }}">Nuevo</a>
-                            @endcan
+                          
 
                             <table class="table table-striped mt-2">
                                 <thead style="background-color:#6777ef">
@@ -38,15 +38,15 @@
                                             <td>{{ $teachers->email }}</td>
                                             <td>
                                                 <form action="{{ route('teachers.destroy', $teachers->id_teacher) }}" method="POST">
-                                                    @can('editar-teachers')
+                                                   
                                                         <a class="btn btn-info"
                                                             href="{{ route('teachers.edit', $teachers->id_teacher) }}">Editar</a>
-                                                    @endcan
+                                                  
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('borrar-teachers')
+                                                    
                                                         <button type="submit" class="btn btn-danger">Borrar</button>
-                                                    @endcan
+                                                   
                                                 </form>
                                             </td>
                                         </tr>

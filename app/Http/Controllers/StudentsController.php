@@ -56,7 +56,7 @@ class StudentsController extends Controller
             'surname' => 'required',
             'telephone' => 'required',
             'nif' => 'required',
-            'date_registered' => 'required' 
+            // 'date_registered' => 'required' 
         ]);
         Students::create($request->all());
         return redirect()->route('students.index');
@@ -105,7 +105,7 @@ class StudentsController extends Controller
             'surname' => 'required',
             'telephone' => 'required',
             'nif' => 'required',
-            'date_registered' => 'required' 
+            // 'date_registered' => 'required' 
         ]);
         $input = $request->all();
 
