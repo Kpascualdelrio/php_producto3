@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('enrollments', EnrollmentsController::class);
     Route::resource('students', StudentsController::class);
     Route::resource('class', ClassController::class);
-    
+    Route::resource('schedule', ScheduleController::class);    
     Route::resource('notifications', NotificationsController::class);
 });
 
