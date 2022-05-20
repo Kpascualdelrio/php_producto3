@@ -4,6 +4,10 @@
         <i class=" fas fa-building"></i><span style="padding: 10px">Dashboard</span>
     </a>
 
+    <a class="nav-link" href="/class">
+        <i class=" fas fa-building"></i><span style="padding: 10px">Class</span>
+    </a>
+
     <a class="nav-link" href="/usuarios">
         <i class=" fas fa-user"></i><span style="padding: 10px">Usuarios</span>
     </a>

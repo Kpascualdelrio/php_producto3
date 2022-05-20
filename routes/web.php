@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('courses', CoursesController::class);
     Route::resource('enrollments', EnrollmentsController::class);
     Route::resource('students', StudentsController::class);
+    Route::resource('class', ClassController::class);
     
 });
 
@@ -53,16 +54,16 @@ Route::get('/homestudent', [RolStudentController::class, 'index'])
 // Route::get('/homestudent/{id}', [RolStudentController::class, 'show']);
 
 
-Route::get('/homestudent/usuarios', [UsuarioController::class, 'index']);
+//Route::get('/homestudent/usuarios', [UsuarioController::class, 'index']);
 Route::get('/homestudent/usuarios/{id}', [UsuarioController::class, 'show']);
 
-Route::get('/homestudent/exams', [ExamsController::class, 'index']);
+//Route::get('/homestudent/exams', [ExamsController::class, 'index']);
 Route::get('/homestudent/exams/{id}', [ExamsController::class, 'show']);
 
-Route::get('/homestudent/usuarios', [UsuarioController::class, 'index']);
-Route::get('/homestudent/usuarios/{id}', [UsuarioController::class, 'show']);
+//Route::get('/homestudent/courses', [Controller::class, 'index']);
+Route::get('/homestudent/class/{id}', [ClassController::class, 'show']);
 
-Route::get('/homestudent/usuarios', [UsuarioController::class, 'index']);
-Route::get('/homestudent/usuarios/{id}', [UsuarioController::class, 'show']);
+//Route::get('/homestudent/enrollments', [UsuarioController::class, 'index']);
+Route::get('/homestudent/enrollments/{id}', [EnrollmentsController::class, 'show']);
 
 
