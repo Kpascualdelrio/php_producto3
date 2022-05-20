@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('class', ClassController::class);
     Route::resource('schedule', ScheduleController::class);    
     Route::resource('notifications', NotificationsController::class);
+    Route::resource('works', WorskController::class);
 });
 
 Route::get('/homestudent', [RolStudentController::class, 'index'])

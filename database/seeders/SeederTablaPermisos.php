@@ -44,7 +44,7 @@ class SeederTablaPermisos extends Seeder
             'crear-enrollments',
             'editar-enrollments',
             'borrar-enrollments',
-            // tabla students 
+            // tabla students
             'ver-students',
             'crear-students',
             'editar-students',
