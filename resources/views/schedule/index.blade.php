@@ -20,6 +20,7 @@
                                   <th style="color:#fff;">time_start</th>
                                   <th style="color:#fff;">time_end</th>                                  
                                   <th style="color:#fff;">day</th>
+                                  <th style="color:#fff;">Acciones</th>
                               </thead>
                               <tbody>
                                 @foreach ($schedule as $schedule)
@@ -32,15 +33,15 @@
                                     <td>{{ $schedule->day }}</td>                                                                                                         
                                     <td>
                                     <form action="{{ route('schedule.destroy', $schedule->id_schedule) }}" method="POST">
-                                                    @can('editar-schedule')
+                                                  
                                                         <a class="btn btn-info"
                                                             href="{{ route('schedule.edit', $schedule->id_schedule) }}">Editar</a>
-                                                    @endcan
+                                                    
                                                     @csrf
                                                     @method('DELETE')
-                                                    @can('borrar-schedule')
+                                                  
                                                         <button type="submit" class="btn btn-danger">Borrar</button>
-                                                    @endcan
+                                               
                                     </form>                                                     
                                     </td>                                   
                                   </tr>

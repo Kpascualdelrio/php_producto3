@@ -8,6 +8,10 @@
         <i class=" fas fa-school"></i><span style="padding: 10px">Class</span>
     </a>
 
+    <a class="nav-link" href="/percentage">
+        <i class=" fas fa-flag-checkered"></i><span style="padding: 10px">Percentage</span>
+    </a>
+
     <a class="nav-link" href="/usuarios">
         <i class=" fas fa-user"></i><span style="padding: 10px">Usuarios</span>
     </a>

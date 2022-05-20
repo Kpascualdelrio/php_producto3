@@ -17,6 +17,7 @@ use App\Http\Controllers\ClassController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\WorksController;
+use App\Http\Controllers\PercentageController;
 
 
 /*
@@ -51,6 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('schedule', ScheduleController::class);    
     Route::resource('notifications', NotificationsController::class);
     Route::resource('works', WorksController::class);
+    Route::resource('percentage', PercentageController::class);
 });
 
 Route::get('/homestudent', [RolStudentController::class, 'index'])
