@@ -13,6 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::table('users', function (Blueprint $table) {
+           
+            $table->foreign('role')->references('name')->on('roles');
+          
+        });
+
         Schema::table('schedules', function (Blueprint $table) {
            
             $table->foreign('id_class')->references('id_class')->on('class');

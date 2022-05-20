@@ -24,13 +24,9 @@ class SeedersDataBase extends Seeder
             'name' => 'SuperAdmin',
             'guard_name' => 'web'
         ]);
+  
         DB::table('roles')->insert([
             'id' => 2,
-            'name' => 'Teacher',
-            'guard_name' => 'web'
-        ]);
-        DB::table('roles')->insert([
-            'id' => 3,
             'name' => 'Student',
             'guard_name' => 'web'
         ]);
@@ -39,50 +35,77 @@ class SeedersDataBase extends Seeder
             'id' => 1,
             'name'=> 'SuperAdmin',
             'email' => 'superadmin@gmail.com',
-            // 'rol' => 'SuperAdmin',
+            'role' => 'SuperAdmin',
             'password' => Hash::make('password'),
 
         ]);
+      
         DB::table('users')->insert([
             'id' => 2,
-            'name'=> 'Teacher',
-            'email' => 'teacher@gmail.com',
+            'name'=> 'Student2',
+            'email' => 'student@gmail.com',
+            'role' => 'Student',
             'password' => Hash::make('password'),
 
         ]);
         DB::table('users')->insert([
             'id' => 3,
-            'name'=> 'Student',
-            'email' => 'student@gmail.com',
+            'name'=> 'Student3',
+            'email' => 'student3@gmail.com',
+            'role' => 'Student',
+            'password' => Hash::make('password'),
+
+        ]);
+        DB::table('users')->insert([
+            'id' => 4,
+            'name'=> 'Student4',
+            'email' => 'student4@gmail.com',
+            'role' => 'Student',
+            'password' => Hash::make('password'),
+
+        ]);
+        DB::table('users')->insert([
+            'id' => 5,
+            'name'=> 'Student5',
+            'email' => 'student5@gmail.com',
+            'role' => 'Student',
             'password' => Hash::make('password'),
 
         ]);
 
-        //Seeders que otorgan permisos para modificar Rol Admin
-        DB::table('role_has_permissions')->insert([
-        
-            'permission_id' => 1,
-            'role_id'=> 1,
+        //
+
+        DB::table('class')->insert([
+
 
         ]);
-        DB::table('role_has_permissions')->insert([
-        
-            'permission_id' => 2,
-            'role_id'=> 1,
 
-        ]);
-        DB::table('role_has_permissions')->insert([
+
+        // //Seeders que otorgan permisos para modificar Rol Admin
+        // DB::table('role_has_permissions')->insert([
+        
+        //     'permission_id' => 1,
+        //     'role_id'=> 1,
+
+        // ]);
+        // DB::table('role_has_permissions')->insert([
+        
+        //     'permission_id' => 2,
+        //     'role_id'=> 1,
+
+        // ]);
+        // DB::table('role_has_permissions')->insert([
          
-            'permission_id' => 3,
-            'role_id'=> 1,
+        //     'permission_id' => 3,
+        //     'role_id'=> 1,
 
-        ]);
-        DB::table('role_has_permissions')->insert([
+        // ]);
+        // DB::table('role_has_permissions')->insert([
 
-            'permission_id' => 4,
-            'role_id'=> 1,
+        //     'permission_id' => 4,
+        //     'role_id'=> 1,
 
-        ]);
+        // ]);
 
 
     }

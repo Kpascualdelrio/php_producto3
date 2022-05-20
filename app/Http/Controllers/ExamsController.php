@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Exams;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,10 +12,10 @@ class ExamsController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:ver-exam |crear-exam|editar-exam|borrar-exam', ['only' => ['index']]);
-        $this->middleware('permission:crear-exam', ['only' => ['create', 'store']]);
-        $this->middleware('permission:editar-exam', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:borrar-exam', ['only' => ['destroy']]);
+        // $this->middleware('permission:ver-exam |crear-exam|editar-exam|borrar-exam', ['only' => ['index']]);
+        // $this->middleware('permission:crear-exam', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:editar-exam', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:borrar-exam', ['only' => ['destroy']]);
     }
     /**
      * Display a listing of the resource.
@@ -52,7 +53,7 @@ class ExamsController extends Controller
         //
         // request()->validate([
         //     'name' => 'required',
-            
+
         //     'mark' => 'required'
 
         // ]);
@@ -68,7 +69,12 @@ class ExamsController extends Controller
      */
     public function show($id)
     {
-        //
+        $exams = [];
+        $exams = User::where('id', '=', $id)
+            ->join('exams', 'exams.id_student', '=', 'users.id')
+            ->get();
+
+        return view('exams.show', compact('exams'));
     }
 
     /**
