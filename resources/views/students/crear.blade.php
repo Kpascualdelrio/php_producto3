@@ -69,7 +69,7 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <label for="date_registered">date_registered</label>
-                                            <input type="text" name="date_registered" class="form-control">
+                                            <input type="date" name="date_registered" class="form-control">
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Guardar</button>

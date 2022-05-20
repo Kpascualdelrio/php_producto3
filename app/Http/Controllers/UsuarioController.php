@@ -50,7 +50,7 @@ class UsuarioController extends Controller
             'name'=>'required',
             'email'=>'required|email|unique:users,email',
             'password'=>'required|same:confirm-password',
-            'roles'=>'required'
+            
         ]);
         $input=$request->all();
         $input['password']=hash::make($input['password']);
@@ -103,7 +103,7 @@ class UsuarioController extends Controller
             'name'=>'required',
             'email'=>'required|email|unique:users,email,'.$id,
             'password'=>'same:confirm-password',
-            'roles'=>'required'
+           
         ]);
 
         $input = $request->all();

@@ -9,10 +9,10 @@ class Courses extends Model
 {
     use HasFactory;
     protected $table = 'courses';
-    protected $primaryKey = 'id_course';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id_course','name', 'description', 'date_start', 'date_end', 'active'
+        'name', 'description', 'date_start', 'date_end', 'active'
     ];
     public $timestamps = false;
 }
