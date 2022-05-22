@@ -65,9 +65,10 @@ class PercentageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $percentage = Percentage::paginate(5);
+        return view('percentage.show', compact('percentage'));
     }
 
     /**

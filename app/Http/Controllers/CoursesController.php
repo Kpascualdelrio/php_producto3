@@ -71,9 +71,10 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $courses = Courses::paginate(5);
+        return view('courses.show', compact('courses'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Enrollment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
@@ -68,7 +69,12 @@ class EnrollmentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $enrollments = [];
+        $enrollments = User::where('users.id', '=', $id)
+            ->join('enrollments', 'enrollments.id_student', '=', 'users.id')
+            ->get();
+
+        return view('enrollments.show', compact('enrollments'));
     }
 
     /**

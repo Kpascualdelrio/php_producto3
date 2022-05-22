@@ -55,22 +55,21 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('percentage', PercentageController::class);
 });
 
+//rutas rol estudent
+
 Route::get('/homestudent', [RolStudentController::class, 'index'])
 ->middleware('student.auth')
 ->name('student.index');
-// Route::get('/homestudent/{id}', [RolStudentController::class, 'show']);
 
-
-//Route::get('/homestudent/usuarios', [UsuarioController::class, 'index']);
 Route::get('/homestudent/usuarios/{id}', [UsuarioController::class, 'show']);
+Route::get('/homestudent/usuarios/edit/{id}', [UsuarioController::class, 'editStudent'])->name('studentedit');
 
-//Route::get('/homestudent/exams', [ExamsController::class, 'index']);
 Route::get('/homestudent/exams/{id}', [ExamsController::class, 'show']);
 
-//Route::get('/homestudent/courses', [Controller::class, 'index']);
-Route::get('/homestudent/class/{id}', [ClassController::class, 'show']);
+Route::get('/homestudent/class', [ClassController::class, 'show']);
 
-//Route::get('/homestudent/enrollments', [UsuarioController::class, 'index']);
 Route::get('/homestudent/enrollments/{id}', [EnrollmentsController::class, 'show']);
 
+Route::get('/homestudent/works/{id}', [WorksController::class, 'show']);
 
+Route::get('homestudent/percentage', [PercentageController::class, 'show']);

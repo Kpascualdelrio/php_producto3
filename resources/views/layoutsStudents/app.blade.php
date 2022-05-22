@@ -66,7 +66,7 @@
 @yield('scripts')
 <script>
     let loggedInUser =@json(\Illuminate\Support\Facades\Auth::user());
-    let loginUrl = '{{ route('student.index') }}';
+    let loginUrl = '{{ route('login') }}';
     const userUrl = '{{url('users')}}';
     // Loading button plugin (removed from BS4)
     (function ($) {

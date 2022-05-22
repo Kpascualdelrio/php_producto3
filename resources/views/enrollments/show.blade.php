@@ -3,7 +3,7 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h3 class="page__heading">Exams</h3>
+        <h3 class="page__heading">enrollments</h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -12,27 +12,24 @@
                     <div class="card-body">
                         <table class="table table-striped mt-2">
                             <thead style="background-color:#6777ef">
-                                <th style="color:#fff;">ID_exam</th>
-                                <th style="color:#fff;">ID_class</th>
-                                <th style="color:#fff;">ID_student</th>
-                                <th style="color:#fff;">name</th>
-                                <th style="color:#fff;">mark</th>
-
+                                <th style="color:#fff;">id</th>
+                                <th style="color:#fff;">id_student</th>
+                                <th style="color:#fff;">id_course</th>
+                                <th style="color:#fff;">status</th>
+                          
                             </thead>
                             <tbody>
-                                @foreach ($exams as $exam)
+                                @foreach ($enrollments as $enrollment)
                                 <tr>
-                                    <td>{{ $exam->id_exam }}</td>
-                                    <td>{{ $exam->id_class }}</td>
-                                    <td>{{ $exam->id_student }}</td>
-                                    <td>{{ $exam->name }}</td>
-                                    <td>{{ $exam->mark }}</td>
-
+                                    <td>{{ $enrollment->id }}</td>
+                                    <td>{{ $enrollment->id_student }}</td>
+                                    <td>{{ $enrollment->id_course }}</td>
+                                    <td>{{ $enrollment->status }}</td>
+                                  
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-
 
                     </div>
                 </div>

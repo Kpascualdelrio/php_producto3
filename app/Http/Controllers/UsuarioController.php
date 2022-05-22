@@ -89,6 +89,15 @@ class UsuarioController extends Controller
         return view('usuarios.editar',compact('user','roles','userRole'));
     }
 
+    public function editStudent($id)
+    {
+        //
+        $user=User::find($id);
+        $roles=Role::pluck('name','name')->all();
+        $userRole=$user->roles->pluck('name','name')->all();
+
+        return view('usuarios.editar',compact('user','roles','userRole'));
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -119,7 +128,34 @@ class UsuarioController extends Controller
         DB::table('model_has_roles')->where('model_id',$id)->delete();
 
         $user->assignRole($request->input('roles'));
-        return redirect()->route('usuarios.index');
+        return redirect()->route('student.index');
+
+    }
+
+    public function updateStudent(Request $request, $id)
+    {
+        //
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required|email|unique:users,email,'.$id,
+            'password'=>'same:confirm-password',
+           
+        ]);
+
+        $input = $request->all();
+        if (!empty($input['password'])){
+            $input['password'] = Hash::make($input['password']);
+            // $input=Arr::except($input,array('password'));
+        }else{
+            $input=Arr::except($input,array('password'));
+        }
+
+        $user=User::find($id);
+        $user->update($input);
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
+
+        $user->assignRole($request->input('roles'));
+        return redirect()->route('usuarios.show');
 
     }
 

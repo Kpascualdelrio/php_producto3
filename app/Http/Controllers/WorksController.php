@@ -70,8 +70,8 @@ class WorksController extends Controller
     public function show($id)
     {
         $works = [];
-        $works = User::where('id', '=', $id)
-            ->join('works', 'works.id_class', '=', 'users.id')
+        $works = User::where('users.id', '=', $id)
+            ->join('works', 'works.id_student', '=', 'users.id')
             ->get();
 
         return view('works.show', compact('works'));
